@@ -12,6 +12,8 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+
 rootProject.name = "Rick And Morty"
 include(":app")
-include ':Characters'
+include(":features:characters")
