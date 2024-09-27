@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -28,8 +30,9 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.2.0'
+        kotlinCompilerExtensionVersion "1.5.11"
     }
+
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
@@ -39,16 +42,19 @@ android {
 
 dependencies {
     implementation(project(":core:designsystem"))
+    implementation(project(":features:characters"))
+    implementation(project(":features:episodes"))
+    implementation(project(":features:locations"))
 
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.navigation)
     implementation(libs.hilt.android)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
     implementation (libs.androidx.core)
-
+    implementation (libs.androidx.navigation.runtime.ktx)
+    implementation (libs.androidx.compose.navigation)
+    kapt(libs.hilt.compiler)
 
     testImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.test.ext)

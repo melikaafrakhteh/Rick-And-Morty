@@ -9,7 +9,7 @@ import com.melika.rickandmorty.icon.Location
 
 enum class TopLevelDestination(
     val icon: ImageVector,
-    val titleTextId: Int
+    val titleTextId: Int,
 ) {
     CHARACTERS(
         icon = Icons.Character,
@@ -19,7 +19,7 @@ enum class TopLevelDestination(
         icon = Icons.Episode,
         titleTextId = R.string.nav_episode_title,
     ),
-    LOCATION(
+    LOCATIONS(
         icon = Icons.Location,
         titleTextId = R.string.nav_location_title,
     )

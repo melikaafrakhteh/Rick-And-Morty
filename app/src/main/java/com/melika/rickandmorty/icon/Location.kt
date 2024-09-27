@@ -1,21 +1,23 @@
 package com.melika.rickandmorty.icon
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.materialIcon
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
 
-val Icons.Location: ImageVector
+public val Icons.Location: ImageVector
     get() {
         if (location != null) {
             return location!!
         }
-        location = materialIcon(name = "Location") {
+        location = Builder(name = "Location", defaultWidth = 800.0.dp, defaultHeight = 800.0.dp,
+                viewportWidth = 64.0f, viewportHeight = 64.0f).apply {
             path(fill = SolidColor(Color(0x00000000)), stroke = SolidColor(Color(0xFF000000)),
                     strokeLineWidth = 1.0f, strokeLineCap = Butt, strokeLineJoin = Miter,
                     strokeLineMiter = 4.0f, pathFillType = NonZero) {
@@ -35,7 +37,7 @@ val Icons.Location: ImageVector
                 arcToRelative(6.88f, 6.88f, 0.0f, true, true, -13.76f, 0.0f)
             }
         }
-
+        .build()
         return location!!
     }
 

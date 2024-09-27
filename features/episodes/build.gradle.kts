@@ -7,8 +7,8 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.material3)
+    implementation(project(":core:designsystem"))
+
     implementation(libs.androidx.compose.navigation)
     implementation(libs.androidx.hilt.navigation.compose)
 }

@@ -12,9 +12,8 @@ dependencies {
     implementation(platform(libs.kotlin.bom))
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.runtime.android)
-    implementation(libs.androidx.material3.android)
+    api(libs.androidx.compose.material3)
     implementation(libs.androidx.ui.graphics.android)
 
     debugApi(libs.androidx.compose.ui.tooling)
